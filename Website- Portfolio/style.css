@@ -1,0 +1,573 @@
+/* General */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+p {
+    color: rgb(85, 85, 85);
+}
+
+/* Transition */
+a, 
+.btn {
+    transition: all 300ms ease;
+}
+
+/* Desktop Top Nav */
+nav, 
+.nav-links {
+    display: flex;
+}
+
+nav {
+    justify-content: space-around;
+    align-items: center;
+    height: 17vh;
+}
+
+.nav-links {
+    gap: 2rem;
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    text-decoration-color: white;
+}
+
+a:hover {
+    color: grey;
+    text-decoration: underline;
+    text-underline-offset: 1rem;
+    text-decoration-color: rgb(181, 181, 181);
+}
+
+.logo {
+    font-size: 2rem;
+}
+
+.logo:hover {
+    cursor: default;
+}
+
+/* Hamburger Menu */
+#hamburger-nav {
+    display: none;
+}
+
+.hamburger-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    width: 30px;
+    cursor: pointer; 
+}
+
+.hamburger-icon span {
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    width: fit-content;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-links a {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: black;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-links li {
+    list-style: none;
+}
+
+.menu-links.open {
+    max-height: 300px;
+}
+
+.hamburger-icon.open span:first-child {
+    transform: rotate(45deg) translate(10px, 5px);
+}
+
+.hamburger-icon.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-icon.open span:last-child {
+    transform: rotate(-45deg) translate(10px, -5px);
+}
+
+/* Sections */
+section {
+    padding-top: 4vh;
+    height: auto;
+    margin: 0 10rem;
+    box-sizing: border-box;
+}
+
+.section-container {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+}
+
+/* Profile Section */
+#profile { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+    height: 80vh;
+    margin-bottom: 6rem;
+}
+
+.section_pic-container {
+    display: flex;
+    height: 300px;
+    width: 300px;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+
+.section_text {
+    align-self: center;
+    text-align: center;
+    margin-right: 8rem;
+}
+
+.title {
+    font-size: 3rem;
+    text-align: center;
+}
+
+#socials-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+.icon {
+    cursor: pointer;
+    height: 2rem;
+    margin-top: 10px;
+}
+
+/* Buttons */
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.btn {
+    font-weight: 600;
+    padding: 1rem;
+    width: 8rem;
+    border-radius: 2rem;
+    transition: all 300ms ease;
+    border: rgb(53, 53, 53) 0.1rem solid;
+}
+
+.btn:hover {
+    background: rgb(53, 53, 53);
+    color: white;
+}
+
+.btn-color-2 {
+    background: none;
+}
+
+.btn-color-2:hover {
+    border: rgb(255, 255, 255) 0.1rem solid;
+}
+
+/* About Section */
+#about {
+    position: relative;
+}
+
+.about-containers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.about-pic {
+    height: 250px;
+    width: 250px;
+    border-radius: 90%;
+    overflow: hidden;
+}
+
+.details-container {
+    padding: 1.5rem;
+    flex: 1;
+    background: white;
+    border-radius: 2rem;
+    border: rgb(53, 53, 53) 0.1rem solid;
+    text-align: center;
+}
+
+/* Experience Section */
+#experience {
+    position: relative;
+}
+
+.experience-sub-title {
+    color: rgb(85, 85, 85);
+    font-weight: 600;
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.experience-detail-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.article-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2.5rem;
+    align-items: flex-start; /* Align all items at the top to ensure uniform alignment */
+}
+
+article {
+    display: flex;
+    flex-direction: column; /* Stack icon and text vertically */
+    align-items: center; /* Center the icon and text horizontally */
+    width: 10rem; /* Ensure a consistent width */
+    text-align: center; /* Center the text */
+}
+
+article .icon {
+    height: 4rem; /* Ensure all icons have the same height */
+    margin-bottom: 1rem; /* Add space between the icon and the text */
+}
+
+article p {
+    margin-top: 0.5rem; /* Adjust the spacing between the icon and text */
+}
+
+.icon-arrow {
+    position: absolute;
+    width: 40px; /* Adjust size as needed */
+    height: auto;
+    right: 0rem; /* Adjust spacing from the right */
+    bottom: 0rem; /* Adjust spacing from the bottom */
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.icon-arrow:hover {
+    opacity: 0.7; /* Slight opacity change on hover for better UX */
+}
+
+
+/* Projects */
+#projects {
+    position: relative;
+}
+
+.color-container {
+    border-color: rgb(163, 163, 163);
+    background: rgb(250, 250, 250);
+}
+
+.project-img {
+    border-radius: 2rem;
+    width:90%;
+    height: 200px;
+}
+
+.project-title {
+    margin: 1rem;
+    color: black;
+}
+
+.project-btn {
+    color: black;
+    border-color: rgb(163, 163, 163);
+}
+
+/* Contact Section */
+#contact {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 70vh;
+}
+
+.contact-info-upper-container {
+    display: flex;
+    justify-content: center;
+    border-radius: 2rem;
+    border: rgb(53, 53, 53) 0.1rem solid;
+    border-color: rgb(163, 163, 163);
+    background: rgb(250, 250, 250);
+    margin: 2rem auto;
+    padding: 0.5rem;
+}
+
+.contact-info-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1rem;
+}
+
+.contact-info-container p {
+    font-size: larger;
+}
+
+.contact-icon {
+    cursor: default;
+    height: 2rem;
+}
+
+.email-icon {
+    height: 2.5rem;
+}
+
+/* Footer Section */
+footer {
+    height: 26vh;
+    margin: 0 1rem;
+}
+
+footer p {
+    text-align: center;
+}
+
+/* Arrow Navigation */
+.arrow {
+    position: absolute;
+    right: 2rem;
+    bottom: 2rem;
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.arrow:hover {
+    transform: scale(1.2);
+}
+
+/* Tablet and smaller screens */
+@media screen and (max-width: 1200px) {
+    #desktop-nav {
+        display: none;
+    }
+
+    #hamburger-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        background-color: white;
+    }
+
+    #experience,
+    .experience-details-container {
+        margin-top: 2rem;
+    }
+
+    #profile,
+    .section-container {
+        display: block;
+        text-align: center; /* Center-align the content */
+        margin-bottom: 10rem;
+    }
+
+    .section_pic-container {
+        margin: 0 auto 1.5rem; /* Center and add space below */
+    }
+
+    .section_text {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .btn-container {
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    #socials-container {
+        justify-content: center;
+        margin-top: 2rem; /* Add space to avoid clashing */
+    }
+
+    .arrow {
+        display: none;
+    }
+
+    section,
+    .section-container {
+        height: fit-content;
+    }
+
+    section {
+        margin: 0 5%;
+    }
+
+    .about-containers {
+        margin-top: 2rem; /* Add space above About section */
+    }
+
+    #contact {
+        padding-top: 2rem; /* Add padding at the top */
+        padding-bottom: 2rem; /* Add padding at the bottom */
+        margin-top: 3rem; /* Add margin to ensure it doesn't overlap with sections above */
+    }
+
+    footer {
+        padding-top: 2rem; /* Add padding to avoid overlap with content above */
+        padding-bottom: 2rem; /* Add padding to create space below */
+    }
+}
+
+/* Mobile screens */
+@media screen and (max-width: 600px) {
+    #contact,
+    footer {
+        height: auto; /* Allow height to adjust automatically */
+        padding-bottom: 6rem; /* Ensure enough space for copyright text */
+    }
+
+    #profile {
+        height: auto; /* Let content dictate height */
+        margin-bottom: 2rem; /* Add margin to ensure separation */
+    }
+
+    .section_pic-container {
+        width: auto;
+        height: auto;
+        max-width: 275px; /* Limit the max width */
+        margin: 0 auto 1.5rem; /* Center and add space below */
+    }
+
+    .section_text_p {
+        font-size: 1.5rem;
+        margin-bottom: 1rem; /* Add space below text */
+    }
+
+    .btn-container {
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: center;
+        gap: 1rem; /* Add space between buttons */
+    }
+
+    #socials-container {
+        justify-content: center;
+        margin-top: 2rem; /* Add space between buttons and icons */
+        gap: 1rem; /* Space between social icons */
+    }
+
+    .about-containers,
+    .contact-info-upper-container,
+    .btn-container {
+        flex-wrap: wrap;
+        justify-content: center; /* Center the elements */
+    }
+
+    .contact-info-container {
+        margin: 0;
+        justify-content: center; /* Center contact info */
+    }
+
+    .contact-info-container p,
+    .nav-links li a {
+        font-size: 1rem;
+    }
+
+    .experience-sub-title {
+        font-size: 1.25rem;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    .section_pic-container {
+        width: auto;
+        height: 46vw;
+        justify-content: center;
+    }
+
+    .section_text_p {
+        font-size: 1.5rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .text_container {
+        text-align: justify;
+    }
+
+    /* Add space between About and Profile sections on mobile */
+    #about {
+        margin-top: 3rem; /* Increase margin to add more space above About section */
+    }
+    
+    footer {
+        padding-top: 2rem; /* Add padding to avoid clash with content above */
+        padding-bottom: 10rem; /* Add padding to avoid clash with the bottom content */
+    }
+
+    footer p {
+        margin-top: 4rem; /* Remove default margins to avoid extra space */
+    }
+}
